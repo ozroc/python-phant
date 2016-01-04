@@ -200,7 +200,7 @@ class Phant(object):
                     timestamp = timestamp[:-6]
                 entry['timestamp'] = datetime.datetime.strptime(timestamp, pattern)
         if sort_by:
-            if sort_by not in self._fields:
+            if sort_by not in self._extended_fields:
                 raise ValueError("Field \'{}\' not in the known list of fields: {}".format(sort_by, self._fields))
             response = sorted(response, key=lambda x: x[sort_by])
         return response
