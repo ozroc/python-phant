@@ -127,13 +127,13 @@ class Phant(object):
         return response
 
     def _get(self, url, params={}, check=True):
-        response = self._session.get(*args, **kwargs)
+        response = self._session.get(url, params=params)
         if check:
             self._check_response(response)
         return response
 
     def _delete(self, url, params={}, check=True):
-        response = self._session.delete(*args, **kwargs)
+        response = self._session.delete(url, params=params)
         if check:
             self._check_response(response)
         return response
